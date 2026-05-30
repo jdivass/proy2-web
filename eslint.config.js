@@ -23,6 +23,17 @@ export default defineConfig([globalIgnores(['dist']), {
     semi:['error', 'never'],
     quotes: ['error', 'single', {avoidEscape: true}],
     indent: ['error', 2],
+    'max-len': [
+    'error',
+    {
+      code: 120,
+      tabWidth: 2,
+      ignoreUrls: true,
+      ignoreStrings: false,
+      ignoreTemplateLiterals: false,
+      ignoreComments: false
+    }
+    ],
     'comma-dangle': ['error', 'never'],
     'object-curly-spacing': ['error', 'always'],
     'space-before-function-paren': [
