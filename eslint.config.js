@@ -12,11 +12,39 @@ export default defineConfig([globalIgnores(['dist']), {
   files: ['**/*.{ts,tsx}'],
   extends: [
     js.configs.recommended,
-    tseslint.configs.recommended,
+    ...tseslint.configs.recommended,
     reactHooks.configs.flat.recommended,
     reactRefresh.configs.vite,
   ],
   languageOptions: {
     globals: globals.browser,
   },
-}, ...storybook.configs["flat/recommended"]])
+  rules: {
+    semi:['error', 'never'],
+    quotes: ['error', 'single', {avoidEscape: true}],
+    indent: ['error', 2],
+    'comma-dangle': ['error', 'never'],
+    'object-curly-spacing': ['error', 'always'],
+    'space-before-function-paren': [
+        'error',
+        {
+          anonymous: 'always',
+          named: 'always',
+          asyncArrow: 'always'
+        }
+      ],
+
+      'eol-last': ['error', 'always'],
+      'no-trailing-spaces': 'error',
+      '@typescript-eslint/consistent-type-imports': 'error',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_'
+        }
+      ]
+    }
+  },
+  ...storybook.configs["flat/recommended"]
+])
