@@ -7,6 +7,7 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 import { defineConfig, globalIgnores } from 'eslint/config'
+import { describe } from "node:test";
 
 export default defineConfig([globalIgnores(['dist']), {
   files: ['**/*.{ts,tsx}'],
@@ -18,6 +19,13 @@ export default defineConfig([globalIgnores(['dist']), {
   ],
   languageOptions: {
     globals: globals.browser,
+    describe: 'readonly',
+    it: 'readonly',
+    expect: 'readonly',
+    beforeEach: 'readonly',
+    afterEach: 'readonly',
+    beforeAll: 'readonly',
+    afterAll: 'readonly',
   },
   rules: {
     semi:['error', 'never'],
