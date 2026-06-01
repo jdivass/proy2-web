@@ -2,6 +2,10 @@
 
 Calculadora web estilo CASIO implementada con React, TypeScript y Vite.
 
+## Utilizar la calculadora en el servidor de la clase
+
+http://35.239.29.236/24687/proy2/
+
 ---
 
 ## Instalación
