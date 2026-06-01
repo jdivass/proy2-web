@@ -1,12 +1,76 @@
-# Proyecto 2 - Calculadora
+# Calculadora CASIO — Proyecto 2
 
-| Implementación |Punteo| 
-|-----|-----|
-|(5 puntos) Por cada test que implementen, para un máximo de 25 puntos. Los tests deben no ser triviales. |25 pts|
-|(5 puntos) Por cada historia de Storybook que implementen, para un máximo de 25 puntos. Las historias deben representar estados o variaciones distintas de los componentes. | 25pts|
-| (10 puntos) Por que su código sea compliant con javascript standard. Para que cuenten los puntos, deben configurar una regla custom que prohíba puntos y coma. Por agregar una regla para que no puedan haber más de 120 caracteres por línea. ✅| 10pts |
-| Por usar Typescript ✅| 5pts |
-| Por no utilizar node ni npm como su package manager. Deben commitear su lockfile ✅ | 5pts |
-|[Criterio subjetivo] Según qué tan interesante es el diseño de su interfaz | 10pts |
-| Si ninguno de sus archivos de componentes pasa de 20 líneas de código | 20 pts |
-|Por poner un title y un favicon distinto al default. | 5pts |
+Calculadora web estilo CASIO implementada con React, TypeScript y Vite.
+
+---
+
+## Instalación
+
+```bash
+git clone https://github.com/jdivass/proy2-web.git
+cd proy2-web
+bun install
+```
+
+## Correr la aplicación
+
+```bash
+bun run dev
+```
+
+Abre [http://localhost:5173](http://localhost:5173) en el navegador.
+
+## Correr los tests
+
+```bash
+bun run test
+```
+
+## Correr Storybook
+
+```bash
+bun run storybook
+```
+
+Abre [http://localhost:6006](http://localhost:6006) en el navegador.
+
+## Correr el linter
+
+```bash
+bun run lint
+```
+
+---
+
+## Tabla de implementaciones
+
+| Implementación | Punteo |
+|---|---|
+| (5 pts) Por cada test no trivial, máximo 25 pts — **6 tests implementados** | 25 pts |
+| (5 pts) Por cada historia de Storybook, máximo 25 pts — **10 historias implementadas** | 25 pts |
+| Código compliant con JavaScript Standard. Regla custom sin punto y coma, máximo 120 caracteres por línea | 10 pts |
+| Uso de TypeScript | 5 pts |
+| Package manager Bun en lugar de npm/node, `bun.lock` commiteado | 5 pts |
+| Diseño de interfaz estilo calculadora física CASIO | 10 pts |
+| Ningún archivo de componente supera las 20 líneas de código | 20 pts |
+| Title `CASIO Calculator` y favicon custom commiteados | 5 pts |
+
+**Total: 105 pts**
+
+---
+
+## Estructura del proyecto
+
+```
+src/
+├── components/
+│   ├── Button/         # Botón individual (variantes: digit, operator, action, equals)
+│   ├── Display/        # Pantalla de la calculadora
+│   └── Keyboard/       # Teclado numérico 
+├── config/
+│   ├── keys.ts         # Definición de teclas
+│   └── buildKeys.ts    # Mapeo de teclas a acciones
+├── hooks/
+│   └── useCalculator.ts  # Lógica completa de la calculadora
+└── main.tsx
+```
