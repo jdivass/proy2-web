@@ -54,4 +54,4 @@ describe('useCalculator', () => {
     act(() => { result.current.handleEquals() })
     expect(result.current.display).toBe('10')
   })
-}) 
+})
